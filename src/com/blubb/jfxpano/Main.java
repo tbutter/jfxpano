@@ -18,7 +18,7 @@ public class Main extends Application {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-		launch();
+		launch(args);
 	}
 
 	PanoView pv = null;
@@ -29,7 +29,7 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		pv = new PanoView(
 				new FileInputStream(
-						"/Users/thomasbutter/Dropbox/Camera Uploads/2012-11-29 16.08.21.jpg"),
+						getParameters().getUnnamed().get(0)),
 				800, 600);
 		BorderPane pane = new BorderPane();
 		pane.setCenter(iv = new ImageView(pv.getImage()));
